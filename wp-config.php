@@ -1,14 +1,37 @@
 <?php
-if (isset($_SERVER["DATABASE_URL"])) {
- $db = parse_url($_SERVER["DATABASE_URL"]);
- define("DB_NAME", trim($db["path"],"/"));
- define("DB_USER", $db["user"]);
- define("DB_PASSWORD", $db["pass"]);
- define("DB_HOST", $db["host"]);
-}
-else {
- die("Your heroku DATABASE_URL does not appear to be correctly specified.");
-}
+/**
+ * The base configurations of the WordPress.
+ *
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, WordPress Language, and ABSPATH. You can find more information
+ * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
+ * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ *
+ * This file is used by the wp-config.php creation script during the
+ * installation. You don't have to use the web site, you can just copy this file
+ * to "wp-config.php" and fill in the values.
+ *
+ * @package WordPress
+ */
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'heroku_72001ac638156aa');
+
+/** MySQL database username */
+define('DB_USER', 'b15b1233b7109b');
+
+/** MySQL database password */
+define('DB_PASSWORD', '881ccb20');
+
+/** MySQL hostname */
+define('DB_HOST', 'us-cdbr-east-03.cleardb.com');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -65,4 +88,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
