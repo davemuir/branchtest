@@ -16,14 +16,14 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-if(isset($_SERVER["CLEARDB_DATABASE_URL"])){
+if (isset($_SERVER["CLEARDB_DATABASE_URL"])) {
 $db = parse_url($_SERVER["CLEARDB_DATABASE_URL"]);
 define("DB_NAME", trim($db["path"],"/"));
 define("DB_USER", $db["user"]);
 define("DB_PASSWORD", db["pass"]);
 define("DB_HOST", $db["host"]);
 }else{
-die("heroku not set up right")
+die("heroku not set up right");
 }
 /**#@+
  * Authentication Unique Keys and Salts.
